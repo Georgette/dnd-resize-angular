@@ -1,0 +1,22 @@
+<p>{{config.title}}</p>
+<table class="table">
+    <thead> 
+        <tr>
+            <th ng-show={{config.massaction}}>
+            </th>
+            <th ng-repeat="label in config.labels">
+                {{label.title}}
+            </th>
+        </tr>
+    </thead> 
+    <tbody> 
+        <tr ng-repeat="record in config.records">
+            <td ng-show="{{config.massaction}}">
+                <input type="checkbox" />
+            </td>
+            <td ng-repeat="column in record.columns">
+                {{column.coldata}}
+            </td>
+        </tr>
+    </tbody> 
+</table>

@@ -1,0 +1,91 @@
+body, html, .full-height, #body-wrap {
+    height: 100%;
+}
+
+#body .row {
+    position: relative;
+}
+.drop-borders {
+    border: 1px dotted gray;
+}
+.drag-target{
+    min-height: 50px;
+}
+.component div{
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    border: 1px solid #fff;
+    min-width: 60px;
+}
+.component div:hover {
+    background-color: #86e2e9;
+    cursor: move;
+}
+#addRow{
+    width: 100%;
+    text-align: center;
+    color: lightseagreen;
+    font-size: 24px;
+}
+.addColumnIcon {
+    color: lightseagreen;
+    font-size: 24px;
+}
+
+#component-bar {
+    background-color: #86e2e9;
+    height: 100%;
+    min-width: 110px;
+}
+
+.grid-builder {
+    height: 50px;
+    min-width:50px;
+    background-color: white;
+    margin: 5px 0px;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: #004444;
+    border: 1px solid white;
+}
+.glyphicon-class {
+    display: block;
+}
+.row-no-gutter [class*="col-"], .col-no-gutter {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.row-no-gutter, .col-no-gutter {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.big-box {
+    height: 40px;
+    border: 1px solid #cccccc;
+}
+.little-box {
+    min-height: 20px;
+    border: 1px solid #cccccc;
+    width: 100%;
+}
+
+#rotate-icon {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+.split-config {
+    font-size: 16px;
+    text-align: center;
+}
+.split-config span{
+    padding: 5px;
+    font-size: 28px;
+    cursor: pointer;
+}

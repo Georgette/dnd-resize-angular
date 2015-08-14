@@ -1,0 +1,243 @@
+body, html, .full-height, #body-wrap {
+    height: 100%;
+}
+#body .row {
+    position: relative;
+}
+.drop-borders {
+    border: 1px dotted gray;
+}
+.drag-target{
+    min-height: 50px;
+}
+#background-component-bar{
+    background-color: #313131;
+}
+.component {
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+    line-height: 1.4;
+    background-color: #ffffff;
+    border: 1px solid #33546d;
+    min-width: 60px;
+    font-size: 12px;
+    color: #7d7d7d;
+    border-radius: 2px;
+
+}
+.component:hover {
+    background-color: #33546d;
+    cursor: move;
+    font-size: 14px;
+    color: #f5f5f5;
+}
+.component-wrap {
+    margin: 15px 0;
+}
+.addRow {
+    text-align: center;
+    color: #33546d;
+}
+.removeRow, .removeColumn {
+    color: #be070a;
+}
+.removeColumn {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    visibility: hidden;
+    z-index: 100000;
+}
+
+.removeRow {
+    position: absolute;
+    text-align: center;
+    display: none;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.removeRow .glyphicon {
+    background-color: white;
+    border-radius: 50%;
+}
+.wx-col:hover .removeColumn,
+.wx-col:hover .columnDragHandle {
+    visibility: visible;
+}
+.addColumnIcon {
+    color: #33546d;
+    padding: 1px 1px 0 0;
+    position : absolute;
+    top: 40%;
+    right: 1px;
+}
+
+#component-bar {
+    background-color: #33546d;
+    height: 100%;
+    min-width: 110px;
+}
+
+.grid-builder {
+    height: 50px;
+    min-width:50px;
+    background-color: white;
+    margin: 5px 0;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: #004444;
+    border: 1px solid white;
+}
+.glyphicon-class {
+    display: block;
+}
+.row-no-gutter [class*="col-"], .col-no-gutter {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.row-no-gutter, .col-no-gutter {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+
+.big-box {
+    min-height: 100px;
+    border: 1px solid #cccccc;
+}
+.wx-row:first-child {
+    border-left: none;
+}
+.little-box {
+    min-height: 20px;
+    border: 1px solid #cccccc;
+    width: 100%;
+}
+
+#rotate-icon {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+.drag-border {
+    width: 5px;
+    cursor: ew-resize;
+    height: 100%;
+    margin-left: -3px;
+    position : absolute;
+}
+/*new grid stuff*/
+.wx-col {
+    float: left;
+    position: relative;
+}
+.wx-row {
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+}
+.wx-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.nohighlight {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.column-size-label {
+    position: absolute;
+    text-align: center;
+    height: 25px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #33546d;
+    color: white;
+}
+.fadeHidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s linear all;
+}
+/*.rowDragHandle {*/
+    /*border-top: 3px solid #7c7c7c;*/
+    /*border-bottom: 3px solid #7c7c7c;*/
+    /*display: none;*/
+    /*position : absolute;*/
+    /*left: -10px;*/
+    /*height: 50%;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*margin: auto;*/
+    /*width:14px;*/
+    /*cursor: move;*/
+    /*border-bottom-left-radius: 3px;*/
+    /*border-top-left-radius: 3px;*/
+    /*background: -moz-linear-gradient(left,  rgba(204,204,204,0) 13%, rgba(204,204,204,0.8) 15%, rgba(204,204,204,1) 19%, rgba(204,204,204,1) 20%, rgba(255,255,255,1) 50%, rgba(204,204,204,1) 80%, rgba(204,204,204,1) 81%, rgba(204,204,204,0.8) 85%, rgba(204,204,204,0) 87%); *//* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, right top, color-stop(13%,rgba(204,204,204,0)), color-stop(15%,rgba(204,204,204,0.8)), color-stop(19%,rgba(204,204,204,1)), color-stop(20%,rgba(204,204,204,1)), color-stop(50%,rgba(255,255,255,1)), color-stop(80%,rgba(204,204,204,1)), color-stop(81%,rgba(204,204,204,1)), color-stop(85%,rgba(204,204,204,0.8)), color-stop(87%,rgba(204,204,204,0))); *//* Chrome,Safari4+ */
+    /*background: -webkit-linear-gradient(left,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); *//* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(left,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); *//* Opera 11.10+ */
+    /*background: -ms-linear-gradient(left,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); *//* IE10+ */
+    /*background: linear-gradient(to right,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); *//* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cccccc', endColorstr='#00cccccc',GradientType=1 ); *//* IE6-9 */
+
+/*}*/
+.columnDragHandle {
+    border-radius: 3px;
+    border-right: 3px solid #7c7c7c;
+    border-left: 3px solid #7c7c7c;
+    width: 25%;
+    cursor: move;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    position: absolute;
+    visibility: hidden;
+    height: 14px;
+    top: -3px;
+    background: -moz-linear-gradient(top,  rgba(204,204,204,0) 13%, rgba(204,204,204,0.8) 15%, rgba(204,204,204,1) 19%, rgba(204,204,204,1) 20%, rgba(255,255,255,1) 50%, rgba(204,204,204,1) 80%, rgba(204,204,204,1) 81%, rgba(204,204,204,0.8) 85%, rgba(204,204,204,0) 87%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(13%,rgba(204,204,204,0)), color-stop(15%,rgba(204,204,204,0.8)), color-stop(19%,rgba(204,204,204,1)), color-stop(20%,rgba(204,204,204,1)), color-stop(50%,rgba(255,255,255,1)), color-stop(80%,rgba(204,204,204,1)), color-stop(81%,rgba(204,204,204,1)), color-stop(85%,rgba(204,204,204,0.8)), color-stop(87%,rgba(204,204,204,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(204,204,204,0) 13%,rgba(204,204,204,0.8) 15%,rgba(204,204,204,1) 19%,rgba(204,204,204,1) 20%,rgba(255,255,255,1) 50%,rgba(204,204,204,1) 80%,rgba(204,204,204,1) 81%,rgba(204,204,204,0.8) 85%,rgba(204,204,204,0) 87%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cccccc', endColorstr='#00cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+.highlight-top{
+    border-top: 50px solid #589dc6;
+}
+.highlight-bottom{
+    border-bottom: 50px solid #5ac60c;
+}
+
+.highlight-right {
+    border-right : 3px solid #5ac60c;
+}
+.highlight-left{
+    border-left: 3px solid #5ac60c;
+}
+
+.row-background.highlight-row {
+   background-color: #ecedec;
+}
+@media screen and (max-width: 767px) {
+    #component-bar {
+        height: auto;
+    }
+}

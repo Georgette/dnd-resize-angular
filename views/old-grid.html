@@ -1,0 +1,45 @@
+<div class="container-fluid full-height">
+    <div class="full-height">
+        <div id="body-wrap" class="row">
+            <div id="component-bar" class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <!--<div data-drag="true" data-jqyoui-options="{helper:'clone'}"-->
+                        <!--jqyoui-draggable="{placeholder: 'keep'}" class="grid-builder">-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 component">
+                        <div class="col-xs-12 col-sm-6 col-md-4"
+                             data-drag="true" data-jqyoui-options="{helper:'clone'}"
+                             jqyoui-draggable="{placeholder: 'keep'}"
+                             ng-repeat="tool in tools">
+                            <span class="glyphicon glyphicon-{{ tool.icon }}" aria-hidden="true"></span>
+                            <span class="glyphicon-class">{{ tool.text }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="body" class="col-no-gutter col-xs-9 col-md-9">
+                <div class="row" ng-repeat="row in rows">
+                    <div ng-repeat="column in row.columns" class="big-box col-md-{{column.size}}">
+                        <span ng-if="$last" ng-click="addColumn(row)" class="pull-right addColumnIcon glyphicon glyphicon-plus-sign"></span>
+
+                        <div class="row" ng-repeat="shit in splitRows">
+                            <div class="col-md-{{column.size}}">split row</div>
+                        </div>
+
+                        <div ng-show="!($first && $last)" class="split-config">
+                            <span ng-click="splitColumn()" class="fa fa-columns"></span>
+                            <label>Split</label>
+                            <span ng-click="splitRow()" id="rotate-icon" class="fa fa-columns"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="addRow" ng-click="addRow()"><span class="glyphicon glyphicon-plus-sign"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+

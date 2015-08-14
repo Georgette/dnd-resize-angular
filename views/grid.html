@@ -1,0 +1,75 @@
+<div class="container-fluid full-height">
+    <div class="full-height">
+        <div id="body-wrap" class="row">
+            <div id="component-bar" class="col-xs-12 col-sm-3">
+                <div class="row">
+                    <div class="col-xs-12 component-wrapper">
+                        <div class="component col-xs-4 col-sm-6 col-md-4"
+                             ng-repeat="tool in tools"
+                             data-component="{{tool.componentName}}"
+                             data-drag="true"
+                             jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep', onStart: 'setDraggable($index, tool)'}"
+                             data-jqyoui-options="{revert: 'invalid', helper: 'clone'}">
+                            <span class="glyphicon glyphicon-{{ tool.icon }}" aria-hidden="true"></span>
+                            <span class="glyphicon-class">{{ tool.text }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="body" class="col-xs-12 col-sm-9 col-no-gutter nohighlight">
+                <div class="wx-row"
+                     ng-class="{'row-background':row.isEmpty}"
+                     data-drop="true"
+                     jqyoui-droppable="{multiple:true, onDrop:'dropComponent(row)'}"
+                     data-jqyoui-options="{hoverClass: 'highlight-row', tolerance: 'pointer', accept: '.component, .wx-col'}"
+                     ng-mouseout="startResizeAbort($event, row)"
+                     ng-mouseover="interceptResizeAbort($event, row)"
+                     ng-mousemove="processResize($event)"
+                     ng-mouseup="endResize($event, row)"
+                     ng-style="row.style"
+                     ng-repeat="row in rows">
+
+
+                    <div ng-repeat="column in row.columns"
+                         ng-style="column.style"
+                         class="big-box wx-col highlight-{{column.dropPosition}}"
+                         data-drag="true"
+                         jqyoui-draggable="{onDrag:'processPosition()', animate: true, onStart: 'setDraggable($index,column)'}"
+                         data-drop="true"
+                         jqyoui-droppable="{onOver:'setDroppable($index, column)',onDrop: 'onDropColumn(row, column, $index)'}"
+                         data-jqyoui-options="{tolerance: 'pointer', greedy: true, handle: '.columnDragHandle', accept: '.wx-col', helper: 'clone'}">
+                        <span class="removeColumn fa fa-times-circle"
+                              ng-show="!resizeActive"
+                              ng-click="removeColumn(row, column)">
+                        </span>
+                        <div class="drag-border"
+                             ng-if="!$first"
+                             ng-mousedown="startResize($event, row, column)" >
+                        </div>
+                        <div ng-repeat="component in column.components">
+                            <div ng-include="'views/components.html'" />
+                        </div>
+
+                        <div ng-if="!resizeActive" class="columnDragHandle"></div>
+
+                        <span class="column-size-label"
+                              ng-class="{fadeHidden:!resizeActive}">
+                            {{column.sizepct | number:1 }}%
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="row" ng-repeat="rows in splitRows">-->
+<!--<div class="col-md-{{column.size}}">split row</div>-->
+<!--</div>-->
+
+<!--<div ng-show="!($first && $last)" class="split-config">-->
+<!--<span ng-click="splitColumn()" class="fa fa-columns"></span>-->
+<!--<label>Split</label>-->
+<!--<span ng-click="splitRow()" id="rotate-icon" class="fa fa-columns"></span>-->
+<!--</div>-->
